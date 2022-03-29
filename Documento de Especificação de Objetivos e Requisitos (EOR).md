@@ -91,7 +91,7 @@ Ainda assim, o projeto já era bastante robusto, e não era compatível com hard
 
 **Imagem 01:** Casos de Uso
 
-![imagem](assets/CasoDeUso.png "Diagrama de caso de uso")
+![imagem](assets/use_case_diagram.png "Diagrama de caso de uso")
 
 ### 3.2 Descrição de Casos de Uso
 
