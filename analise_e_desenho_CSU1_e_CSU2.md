@@ -4,26 +4,40 @@
 
 | Data | Descrição | Autor |
 | --- | --- | --- |
-| 08/04/2022 | Versão 1.0.0 | Luan F Barcelos|
+| 08/04/2022 | Versão 1.0.0 | Luan F Barcelos |
+| 10/04/2022 | Revisao Geral | Joabe Dias |
+| 11/04/2022 | Add Contrato Operação | Luan F Barcelos |
 
 ---
 
 ## Índice Analítico
 
-* 1 [CSU1](#1-csu1)
-  * 1.1 [Descrição Resumida](#11-descrição-resumida)
-  * 1.2 [Descrição Expandida Essencial](#12-descrição-expandida-essencial)
-* 2 [CSU2](#2-csu2)
-  * 2.1 [Descrição Resumida](#21-descrição-resumida)
-  * 2.2 [Descrição Expandida Essencial](#22-descrição-expandida-essencial)
+* 1 [Casos de Uso](#1-casos-de-uso)
+  * 1.1 [Login de Usuário](#11-login-de-usuário)
+    * 1.1.1 [Descrição Resumida](#111-descrição-resumida)
+    * 1.1.2 [Descrição Expandida Essencial](#112-descrição-expandida-essencial)
+  * 1.2 [Cadastro de Usuário](#12-cadastro-de-usuário)
+    * 1.2.1 [Descrição Resumida](#121-descrição-resumida)
+    * 1.2.2 [Descrição Expandida Essencial](#122-descrição-expandida-essencial)
+* 2 [MER](#2-mer)
+* 3 [Database Schema](#3-database-schema)
+* 4 [BackEnd](#4-backend)
+  * 4.1 [Diagrama de Classe](#41-diagrama-de-classe)
+  * 4.2 [Diagrama de Pacote](#42-diagrama-de-pacotes)
+* 5 [FrontEnd](#5-frontend)
+  * 5.1 [Protótipos Figma](#51-protótipos-figma)
+  * 5.2 [Diagrama de Componentes](#52-diagrama-de-componentes)
+* 6 [Contratos de Operação](#6-contratos-de-operação)
 
-## 1 CSU1
+## 1 Casos de Uso
 
-### 1.1 Descrição Resumida
+### 1.1 Login de Usuário
 
-Este caso de uso especifica a ação de autenticação que um usuário executa no sistema, com objetivo de se conectar na aplicação. Apenas usuários cadastrados podem se autenticar no sistema. O usuário fornece seus dados básicos de autenticação e, após a validação no sistema, o usuário torna-se apto a realizar operações da área restrita do sistema.
+#### 1.1.1 Descrição Resumida
 
-### 1.2 Descrição Expandida Essencial
+Este caso de uso especifica a ação de autenticação do usuário executada pelo sistema, com objetivo de se conectar à aplicação. Apenas usuários cadastrados podem se autenticar. O usuário fornece seus dados de login e senha e após a validação do sistema, torna-se apto a realizar operações na área restrita do software.
+
+#### 1.1.2 Descrição Expandida Essencial
 
 * Categoria: Secundário
 * Atores envolvidos: Usuário comum e Usuário administrador
@@ -31,45 +45,39 @@ Este caso de uso especifica a ação de autenticação que um usuário executa n
 <br>
 
 * Pré-condições:
-  1. O usuário deve se logar para acessar o sistema
-  2. O usuário deve ter acesso ao sistema
-  3. O usuário deve saber seu login e senha
-
-<br>
-
+  1. Usuário deve ter seu cadastro no sistema
 * Pós-condições:
-  1. Ao ser autenticado, o acesso ao sistema será permitido
+  1. Ao ser autenticado o usuário será redirecionado à tela inicial do sistema
 
 <br>
 
 * Fluxo Principal de Sucesso (cenário principal)
-  1. O usuário informa ao sistema o login e senha
-  2. O Sistema verifica se o usuário existe
+  1. O usuário informa o login e senha
+  2. O Sistema verifica se o usuário está cadastrado
   3. O sistema verifica se a senha informada combina com o salt+hash armazenados no site
-  4. O sistema devolve o token de acesso deste usuário permitindo seu uso
+  4. O sistema devolve o token de acesso deste usuário permitindo seu acesso
 * Cenários alternativos
-  1. O usuário não lembra do sua senha
-     * O usuário solicita ao sistema administrador para resetar sua senha
-  2. O usuario nao se lembra do login
-     * O usuário solicita ao sistema administrador para buscar na base qual o correto
-     * O usuário solicita ao administrador para criar um novo usuário
-  3. O usuario nao se lembra do login nem da senha
-     * O usuário solicita ao administrador para criar um novo usuário
-  4. O usuário administrador perdeu seu acesso
-     * O administrador solicita ao suporte ou equipe de TI para criar um novo e inativar o anterior
+  1. Usuário não lembra do sua senha
+     * Usuário solicita ao administrador o reset da senha.
+  2. Usuario nao se lembra do login
+     * Usuário solicita ao administrador a busca do login correto na base
+  3. Usuário não lembra do login e senha
+     * Usuário solicita ao administrador a alteração do usuário e senha
+  4. Usuário administrador perdeu seu acesso
+     * Administrador solicita ao suporte de TI um novo acesso e a inativação do anterior
 
 <br>
 
 * Regras de negócio
-  1. Para ter acesso ao sistema, o usuário precisa ser cadastrado
+  1. Para o acesso à aplicação o usuário precisa estar cadastrado
 
-## 2 CSU2
+### 1.2 Cadastro de Usuário
 
-### 2.1 Descrição Resumida
+#### 1.2.1 Descrição Resumida
 
-Este caso de uso especifica a ação de cadastrar novos usuários no sistema, com objetivo de se conectar na aplicação.
+Este caso de uso especifica a ação de cadastro de novos usuários na aplicação, com objetivo de se conectar no sistema.
 
-### 2.2 Descrição Expandida Essencial
+#### 1.2.2 Descrição Expandida Essencial
 
 * Categoria: Primário
 * Atores envolvidos: Usuário administrador
@@ -77,42 +85,36 @@ Este caso de uso especifica a ação de cadastrar novos usuários no sistema, co
 <br>
 
 * Pré-condições:
-  1. O usuário deve se logar para acessar o sistema
-  2. O usuário deve ter acesso ao sistema
-  3. O usuário deve saber seu login e senha
-
-<br>
-
+  1. Usuário deve ter cadastro no sistema
+  2. Usuário deve logar para ter acesso
 * Pós-condições:
-  1. Ao ser autenticado, o acesso ao sistema será permitido
+  1. Ao ser autenticado o usuário será redirecionado à tela inicial do sistema
 
 <br>
 
 * Fluxo Principal de Sucesso (cenário principal)
-  1. Um usuario solicita a criação de um usuario administrador ao administrador técnico do sistema
-  2. O administrador tecnico do sistema, via CLI, executa o script de criação de novos administradores
-  3. O usuario administrador é criado
-  4. Novos usuarios comuns podem ser criados a partir do usuario administrador
+  1. Usuário solicita o cadastro de um login administrador à equipe de T.I. do sistema
+  2. Administrador técnico do sistema, via CLI, executa o script de criação de novos administradores
+  3. Administrador é criado
+  4. Administrador acessa o sistema
+  5. Novos usuários comuns podem ser cadastrados a partir do usuario administrador
 * Cenários alternativos
-  1. O usuario nao se lembra do login nem da senha
-     * O usuário solicita ao administrador para criar um novo usuário
-  2. O Usuário deseja se cadastrar no sistema
-     * O usuário solicita ao administrador para criar um novo usuário
-  3. O usuário não se lembra do login e senha ou desejar se cadastrar no sistema, mas não sabe quem é o administrador
-     * Não há cadastro de usuários externos
+  1. Usuario nao se lembra do login nem da senha
+     * Administrador solicita ao suporte de TI um novo acesso e a inativação do anterior
+  2. Usuário deseja ter seu cadastro no sistema, mas não sabe quem é o administrador
+     * Não há cadastro de usuários externo
 
 <br>
 
 * Regras de negócio
-  1. Somente usuários administradores podem cadastrar usuários comuns
-  2. Somente o administrador do sistema (quem o implementa), pode criar usuários administradores
+  1. Somente o administrador do sistema (quem o implementa), pode criar usuários administradores
+  2. Somente usuários administradores podem cadastrar usuários comuns
 
-
-### 3 MER
+## 2 MER
 
 ![MER](assets/MER.png "Modelo Entidade-Relacionamento")
 
-### 4 Database Schema
+## 3 Database Schema
 
 ```sql
 -- DROP SCHEMA public;
@@ -138,14 +140,91 @@ CREATE INDEX ix_user_id ON public."user" USING btree (id);
 
 ```
 
-### 5 Diagrama de Classe
+## 4 BackEnd
+
+### 4.1 Diagrama de Classe
 
 ![class_diagram](assets/class_diagram.png "Diagrama de Classe Backend")
 
-### 6 Diagrama de Componentes (frontend)
+### 4.2 Diagrama de Pacotes
+
+![package_diagram](assets/diagrama_de_pacote.png "Diagrama de Pacotes Backend")
+
+## 5 FrontEnd
+
+### 5.1 Protótipos Figma
+
+![login_prototype](assets/protoipo_login.png "Protótipo de tela login")
+
+### 5.2 Diagrama de Componentes
 
 ![component_diagram](assets/diagrama_componente.png "Diagrama de Componentes Frontend")
 
-### 7 Diagrama de Pacotes (backend)
+## 6 Contratos de Operação
 
-![package_diagram](assets/diagrama_de_pacote.png "Diagrama de Pacotes Backend")
+### 6.1 login.create(dto)
+
+```python
+dto = {
+  'login':'talfulano',
+  'password':'secret'
+}
+```
+
+* Responsabilidades
+  * Receber o par login-password contido no Objeto de Transferencia de Dados (DTO)
+  * Validar a entrada do usuario no sistema
+* Pré-Condições
+  * Possuir cadastro
+* Pós-Condições
+  * Busca no banco de dados do id e o hash de senha do login informado
+  * Comparar o hash da senha do banco com a recebida
+  * Devolver o id do usuario caso validado
+* Tratamento de exceções
+  * Login ou senha incorretos
+    * **Classe de erro**: fastapi.HTTPException
+    * **HTTP status code**: 400
+    * **Messangem**: 'Erro: Usuario ou Senha incorretos'
+* Regras de negócio
+  * Senha validada contra hash + salt
+  * Não informar erro especifico se apenas a senha estiver incorreta para evitar tentativas de DDoS
+
+### 6.2 usuario.create(dto)
+
+```python
+dto = {
+  'login':'talfulano',
+  'name':'Fulano de Tal',
+  'password':'secret'
+}
+```
+
+* Responsabilidades
+  * Receber o objeto de transferencia de dados (DTO) do usuario
+  * Validar se o login informado não existe
+  * Criar o id do usuario
+  * Inserir no banco os valores
+* Pré-Condições
+  * DTO devidamente validado pela framework (tipos e obrigatoriedade dos campos)
+  * Possuir permissao de administração para executar esta função
+* Pós-Condições
+  * ID do usuráio foi devidamente criado
+  * Usuário foi salvo no banco
+  * Retorno do id do usuário
+* Tratamento de exceções
+  * Sem permissao de administração
+    * **Classe de erro**: fastapi.HTTPException
+    * **HTTP status code**: 400
+    * **Messangem**: 'Erro: Usuário sem privilegios para esta operação'
+  * Campo obrigatório nao informado no DTO
+    * **Classe de erro**: fastapi.HTTPException
+    * **HTTP status code**: 422
+    * **Messangem**: 'Entidade não processada: campo {nome_do_campo} obrigatório'
+  * Valor do campo diferente no DTO
+    * **Classe de erro**: fastapi.HTTPException
+    * **HTTP status code**: 422
+    * **Messangem**: 'Entidade não processada: tipo inválido para o campo {nome_do_campo}'
+* Regras de negócio
+  * ID de usuário deve ser UUID versao 4
+  * Antes de ser salva a senha no banco, deve ter sido realizado o calculo de seu hask + salt
+  * Login deve ser unico no sistema
