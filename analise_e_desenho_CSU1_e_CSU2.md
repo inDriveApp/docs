@@ -154,7 +154,7 @@ CREATE INDEX ix_user_id ON public."user" USING btree (id);
 
 ### 5.1 Protótipos Figma
 
-![login_prototype](assets/protoipo_login.png "Protótipo de tela login")
+![login_prototype](assets/prototipo_login.png "Protótipo de tela login")
 
 ### 5.2 Diagrama de Componentes
 
