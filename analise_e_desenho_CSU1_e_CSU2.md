@@ -7,6 +7,7 @@
 | 08/04/2022 | Versão 1.0.0 | Luan F Barcelos |
 | 10/04/2022 | Revisao Geral | Joabe Dias |
 | 11/04/2022 | Add Contrato Operação | Luan F Barcelos |
+| 20/04/2022 | Correçao dos componentes FE | Luan F Barcelos, Jefferson |
 
 ---
 
@@ -27,6 +28,7 @@
 * 5 [FrontEnd](#5-frontend)
   * 5.1 [Protótipos Figma](#51-protótipos-figma)
   * 5.2 [Diagrama de Componentes](#52-diagrama-de-componentes)
+  * 5.3 [Diagrama de Pacotes](#53-diagrama-de-pacotes)
 * 6 [Contratos de Operação](#6-contratos-de-operação)
 
 ## 1 Casos de Uso
@@ -112,7 +114,7 @@ Este caso de uso especifica a ação de cadastro de novos usuários na aplicaç�
 
 ## 2 MER
 
-![MER](assets/MER.png "Modelo Entidade-Relacionamento")
+![MER](assets/AD01/backend/MER.png "Modelo Entidade-Relacionamento")
 
 ## 3 Database Schema
 
@@ -144,21 +146,25 @@ CREATE INDEX ix_user_id ON public."user" USING btree (id);
 
 ### 4.1 Diagrama de Classe
 
-![class_diagram](assets/class_diagram.png "Diagrama de Classe Backend")
+![class_diagram](assets/AD01/backend/class_diagram.png "Diagrama de Classe Backend")
 
 ### 4.2 Diagrama de Pacotes
 
-![package_diagram](assets/diagrama_de_pacote.png "Diagrama de Pacotes Backend")
+![package_diagram](assets/AD01/backend/package_diagram.png "Diagrama de Pacotes Backend")
 
 ## 5 FrontEnd
 
 ### 5.1 Protótipos Figma
 
-![login_prototype](assets/prototipo_login.png "Protótipo de tela login")
+![login_prototype](assets/AD01/frontend/prototipo_login.png "Protótipo de tela login")
 
 ### 5.2 Diagrama de Componentes
 
-![component_diagram](assets/diagrama_componente.png "Diagrama de Componentes Frontend")
+![component_diagram](assets/AD01/frontend/component_diagram.png "Diagrama de Componentes Frontend")
+
+### 5.3 Diagrama de Pacotes
+
+![package_diagram](assets/AD01/frontend/package_diagram.png "Diagrama de Pacotes Frontend")
 
 ## 6 Contratos de Operação
 

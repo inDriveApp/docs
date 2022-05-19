@@ -4,7 +4,7 @@
 
 | Data | Descrição | Autor |
 | --- | --- | --- |
-| 28/04/2022 | Versão 1.0.0 | Luan F Barcelos |
+| 28/04/2022 | Versão 1.0.0 | Luan F Barcelos, Jefferson |
 
 ---
 
@@ -23,6 +23,7 @@
 * 3 [FrontEnd](#3-frontend)
   * 3.1 [Protótipos Figma](#31-protótipos-figma)
   * 3.2 [Diagrama de Componentes](#32-diagrama-de-componentes)
+  * 3.3 [Diagrama de Pacotes](#33-diagrama-de-pacotes)
 * 4 [Contratos de Operação](#4-contratos-de-operação)
 
 ## 1 Casos de Uso
@@ -108,27 +109,25 @@ Este caso de uso especifica o acesso aos arquivos enviados com o objetivo de obt
 
 ### 2.1 Diagrama de Classe
 
-``` TODO
-![class_diagram](assets/class_diagram.png "Diagrama de Classe Backend")
-```
+![class_diagram_AD02](assets/AD02/backend/class_diagram.png "Diagrama de Classe Backend")
 
 ### 2.2 Diagrama de Pacotes
 
-``` TODO
-![package_diagram](assets/diagrama_de_pacote.png "Diagrama de Pacotes Backend")
-```
+![package_diagram_AD02](assets/AD02/backend/package_diagram.png "Diagrama de Pacotes Backend")
 
 ## 3 FrontEnd
 
 ### 3.1 Protótipos Figma
 
-![login_prototype](assets/prototipo_arquivos.png "Protótipo de tela arquivos")
+![login_prototype](assets/AD02/frontend/prototipo_arquivos.png "Protótipo de tela arquivos")
 
 ### 3.2 Diagrama de Componentes
 
-``` TODO
-![component_diagram](assets/diagrama_componente.png "Diagrama de Componentes Frontend")
-```
+![component_diagram](assets/AD02/frontend/component_diagram.png "Diagrama de Componentes Frontend")
+
+### 3.3 Diagrama de Pacotes
+
+![package_diagram](assets/AD02/frontend/package_diagram.png "Diagrama de Pacotes Frontend")
 
 ## 4 Contratos de Operação
 
