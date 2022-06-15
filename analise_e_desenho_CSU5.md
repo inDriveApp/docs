@@ -87,15 +87,11 @@ Este caso de uso especifica a ação de compartilhar pastas ou arquivos com outr
 
 ### 3.2 Diagrama de Componentes
 
-```
 ![component_diagram](assets/AD03/frontend/component_diagram.png "Diagrama de Componentes Frontend")
-```
 
 ### 3.3 Diagrama de Pacotes
 
-```
 ![package_diagram](assets/AD03/frontend/package_diagram.png "Diagrama de Pacotes Frontend")
-```
 
 ## 4 Contratos de Operação
 
